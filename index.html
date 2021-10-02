@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condemned</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #303a25;
+            overflow: hidden;
+        }
+
+        #gc {
+            background:#1e2417;
+        }
+
+        #start_screen {
+            background-image: url('https://media.discordapp.net/attachments/755403134368743535/756287933043966033/title.png');
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            background-size: 100vw 100vh;
+            background-repeat: no-repeat;
+        }
+      
+        #button_container {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #button1, #button2, #button3 {
+            background-color: black;
+            color: white;
+            font-weight: 900;
+            font-size: 3.5vw;
+            width: 20vw;
+            height: 6.5vw;
+            border-radius: 20px;
+            transition: 0.3s;
+            margin-bottom: 20px;
+            border: none;
+            user-select: none;
+        }
+      
+       #button1:hover, #button2:hover, #button3:hover, #button1:active, #button2:active, #button3:active {
+            background-color: #1c1c1c;
+       }
+
+       #health_bar {
+           position: absolute;
+           left: 0;
+           top: 0;
+       }
+    </style>
+</head>
+<body>
+
+    <div id="start_screen">        
+      <div id="button_container">
+            <button id="button1" onmouseup="document.getElementById('start_screen').style.display = 'none'; startGame();">START</button>
+            <button id="button2">SETTINGS</button>
+            <button id="button3" onclick="window.open('credits.html')">CREDITS</button>
+      </div>  
+    </div>
+
+    <canvas id="gc" width="1500" height="900"></canvas>
+
+    <img id="machine_gun" style="display: none" src="machine_gun.png"/>
+    <img id="sniper" style="display: none" src="sniper.png"/>
+    <img id="wound" style="display: none" src="https://media.discordapp.net/attachments/756299569846943800/756299666735366204/sratch1.png"/>
+    <img id="health_bar" style="display: none" src="HPbar.png" />
+
+    <script src="game.js"></script>
+    <script src="player.js"></script>
+    <script src="gun.js"></script>
+    <script src="zombie.js"></script>
+</body>
+</html>
