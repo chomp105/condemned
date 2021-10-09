@@ -54,6 +54,8 @@ let game = {
     },
     updateHealth: () => {
       game.ctx.drawImage(document.getElementById('health_bar'), 25, game.getHeight() - 110, 300, 110);
+      game.ctx.fillStyle = "rgba(0,0,0,0.5)";
+      game.ctx.fillRect(140, game.getHeight() - 60, 175, 18);
       game.ctx.fillStyle = "red";
       game.ctx.fillRect(140, game.getHeight() - 60, 175 * (player.health / 100), 18);
     },
